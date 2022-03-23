@@ -10,7 +10,8 @@
                   :exclusions [com.fasterxml.jackson.core/jackson-databind]]
                  [com.fasterxml.jackson.dataformat/jackson-dataformat-cbor "2.12.4"
                   :exclusions [com.fasterxml.jackson.core/jackson-databind]]
-                 [tigris "0.1.2"]]
+                 [tigris "0.1.2"]
+                 [org.flatland/ordered "1.15.10"]]
   :profiles {:dev {:dependencies [[org.clojure/clojure "1.10.3"]
                                   [org.clojure/test.generative "0.1.4"]
                                   [org.clojure/tools.namespace "0.3.1"]]}

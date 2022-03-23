@@ -1,4 +1,5 @@
 (ns cheshire.parse
+  (:require [flatland.ordered.map :refer [ordered-map]])
   (:import (com.fasterxml.jackson.core JsonParser JsonToken)))
 
 (declare parse*)
@@ -18,7 +19,7 @@
   (let [jp (tag jp)]
     `(do
        (.nextToken ~jp)
-       (loop [mmap# (transient {})]
+       (loop [mmap# (transient (ordered-map))]
          (if-not (identical? (.getCurrentToken ~jp)
                              JsonToken/END_OBJECT)
            (let [key-str# (.getText ~jp)
